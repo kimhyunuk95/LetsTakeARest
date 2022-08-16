@@ -15,7 +15,6 @@ beautifulsoup4
 haversine
 googlemaps
 folium
-os
 requests
 time
 json
