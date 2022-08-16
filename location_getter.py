@@ -23,5 +23,6 @@ if result:
     if "GET_LOCATION" in result:
         st.write(result.get("GET_LOCATION"))
         
+st.write(result)
 def get():
     return result['lat'], result['lon']
