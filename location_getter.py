@@ -25,4 +25,4 @@ if result:
         
 st.write('getter:',result)
 def get():
-    return result
+    return 30,120
