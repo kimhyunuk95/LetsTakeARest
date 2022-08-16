@@ -3,7 +3,7 @@ import numpy as np
 import howlong
 import location_getter
 
-df = pd.read_csv('seoul_info.csv')
+df = pd.read_csv('./seoul_info.csv')
 df = df[df["상권업종중분류명"]=="커피점/카페"]
 df = df[["상호명","지점명","상권업종소분류명","시군구코드",\
     "시군구명","행정동명","법정동명","지번주소","도로명주소",\
