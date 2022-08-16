@@ -5,15 +5,12 @@ import numpy as np
 import tensorflow as tf
 import json
 import requests
+import cafe_distance
 
 
 def main():
-  with tab1:
-    st.markdown('''
-    # tab1''')
-    st.markdown('---')
+  result = cafe_distance.get()
+  print(result)
     
-   with tab2:
-    st.markdown('''
-    ## tab2''')
-    st.markdown('---')
+    
+main()
