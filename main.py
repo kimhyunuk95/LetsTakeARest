@@ -3,9 +3,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import tensorflow as tf
-import json
-import requests
-import cafe_distance
 
 
 st.title('Uber pickups in NYC')
