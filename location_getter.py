@@ -1,23 +1,26 @@
-import os
-import requests
-import googlemaps
-import time
-import json
-import ssl
-import urllib.request
 import streamlit as st
+from bokeh.models.widgets import Button
+from bokeh.models import CustomJS
+from streamlit_bokeh_events import streamlit_bokeh_events
 
-def get():
-    LOCATION_API_KEY = 'AIzaSyAF4T_1XzBl48PyXYjsCwGYvTtdvp59aUc'
+loc_button = Button(label="Get Location")
+loc_button.js_on_event("button_click", CustomJS(code="""
+    navigator.geolocation.getCurrentPosition(
+        (loc) => {
+            document.dispatchEvent(new CustomEvent("GET_LOCATION", {detail: {lat: loc.coords.latitude, lon: loc.coords.longitude}}))
+        }
+    )
+    """))
+result = streamlit_bokeh_events(
+    loc_button,
+    events="GET_LOCATION",
+    key="get_location",
+    refresh_on_update=False,
+    override_height=75,
+    debounce_time=0)
 
-    url = f'https://www.googleapis.com/geolocation/v1/geolocate?key={LOCATION_API_KEY}'
-    data = {
-        'considerIp': True,
-    }
-
-    result = requests.post(url, data)
-    result = result.json()
-    
-    st.write(result)
-
-    return result['location']['lat'], result['location']['lng']
+if result:
+    if "GET_LOCATION" in result:
+        st.write(result.get("GET_LOCATION"))
+        
+        
