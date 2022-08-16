@@ -22,6 +22,8 @@ result = streamlit_bokeh_events(
 if result:
     if "GET_LOCATION" in result:
         st.write(result.get("GET_LOCATION"))
+else:
+    st.write('getterNone')
         
 st.write('getter:',result)
 def get():
