@@ -8,7 +8,8 @@ if df.empty:
     st.write('없음')
 else :
     st.write('있음')
-
+    st.write(df.shape)
+    
 def get():
     destination_lat = df['위도']
     destination_lng = df['경도']
