@@ -16,5 +16,7 @@ def get():
 
     result = requests.post(url, data)
     result = result.json()
+    
+    st.write(result)
 
     return result['location']['lat'], result['location']['lng']
