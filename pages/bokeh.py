@@ -21,4 +21,4 @@ result = streamlit_bokeh_events(
 
 if result:
     if "GET_LOCATION" in result:
-        st.write(result.get("GET_LOCATION")['lat'])
+        st.write(result.get("GET_LOCATION")['lon'])
