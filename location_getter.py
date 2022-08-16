@@ -23,7 +23,7 @@ if result:
     if "GET_LOCATION" in result:
         st.write(result.get("GET_LOCATION"))
 else:
-    st.write('getterNon')
+    st.write('getterNone')
         
 st.write('getter:',result)
 def get():
