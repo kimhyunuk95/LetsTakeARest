@@ -24,4 +24,4 @@ if result:
         st.write(result.get("GET_LOCATION"))
         
 def get():
-    pass
+    return result['lat'], result['lon']
