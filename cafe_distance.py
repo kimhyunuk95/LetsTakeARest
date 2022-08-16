@@ -9,7 +9,7 @@ if df.empty:
 else :
     st.write('있음')
     
-a = df.columns
+a = df.columns[0]
 st.write(a)
 
 df = df[df['상권업종중분류명']=="커피점/카페"]
