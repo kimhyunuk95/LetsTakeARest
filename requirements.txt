@@ -10,3 +10,4 @@ beautifulsoup4
 haversine
 googlemaps
 folium
+streamlit-bokeh-events
