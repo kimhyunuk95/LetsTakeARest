@@ -10,4 +10,3 @@ beautifulsoup4
 haversine
 googlemaps
 folium
-urllib.request
