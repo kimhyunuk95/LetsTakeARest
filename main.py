@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import cafe_distance
 
 st.title('Uber pickups in NYC')
 
@@ -34,3 +35,5 @@ filtered_data = data[data[DATE_COLUMN].dt.hour == hour_to_filter]
 
 st.subheader('Map of all pickups at %s:00' % hour_to_filter)
 st.map(filtered_data)
+result = cafe_distance.get()
+st.write(result)
