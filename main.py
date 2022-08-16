@@ -7,11 +7,6 @@ from bokeh.models import CustomJS
 from streamlit_bokeh_events import streamlit_bokeh_events
 
 df = pd.read_csv('./seoul_info2.csv')
-if df.empty:
-    st.write('없음')
-else :
-    st.write('있음')
-    st.write(df.shape)
     
 loc_button = Button(label="Get Location")
 loc_button.js_on_event("button_click", CustomJS(code="""
