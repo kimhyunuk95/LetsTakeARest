@@ -4,7 +4,7 @@ import location_getter
 import streamlit as st
 
 df = pd.read_csv('./seoul_info.csv')
-if not df:
+if df.empty:
     st.write('없음')
 else :
     st.write('있음')
