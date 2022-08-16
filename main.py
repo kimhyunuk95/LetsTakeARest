@@ -4,6 +4,8 @@ import numpy as np
 import cafe_distance
 
 st.title('Uber pickups in NYC')
+result = cafe_distance.get()
+st.write(result)
 
 DATE_COLUMN = 'date/time'
 DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
@@ -35,5 +37,3 @@ filtered_data = data[data[DATE_COLUMN].dt.hour == hour_to_filter]
 
 st.subheader('Map of all pickups at %s:00' % hour_to_filter)
 st.map(filtered_data)
-result = cafe_distance.get()
-st.write(result)
