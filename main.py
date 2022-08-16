@@ -10,7 +10,7 @@ import cafe_distance
 
 def main():
   result = cafe_distance.get()
-  print(result)
+  st.write(result)
     
     
 main()
