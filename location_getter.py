@@ -19,12 +19,6 @@ result = streamlit_bokeh_events(
     override_height=75,
     debounce_time=0)
 
-if result:
-    if "GET_LOCATION" in result:
-        st.write(result.get("GET_LOCATION"))
-else:
-    st.write('getterNonanjdla')
-        
-st.write('getter:',result)
+
 def get():
-    return 30,120
+    return result.get("GET_LOCATION")['lat'], result.get("GET_LOCATION")['lon']
