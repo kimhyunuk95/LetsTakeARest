@@ -8,7 +8,7 @@ import urllib.request
 import streamlit as st
 
 def get():
-    LOCATION_API_KEY = 'AIzaSyDKwnXEssm-ObZx0UO4XpGfZxgytTu6VMw'
+    LOCATION_API_KEY = 'AIzaSyAF4T_1XzBl48PyXYjsCwGYvTtdvp59aUc'
 
     url = f'https://www.googleapis.com/geolocation/v1/geolocate?key={LOCATION_API_KEY}'
     data = {
