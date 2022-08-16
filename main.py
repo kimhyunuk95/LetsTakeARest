@@ -8,7 +8,6 @@ from streamlit_bokeh_events import streamlit_bokeh_events
 
 df = pd.read_csv('./seoul_info2.csv')
 
-origint_lat,origin_lng = 37.5666805, 126.9784147
 
 loc_button = Button(label="Get Location")
 loc_button.js_on_event("button_click", CustomJS(code="""
