@@ -25,4 +25,4 @@ if result:
         
 st.write(result)
 def get():
-    return result['lat'], result['lon']
+    return result
