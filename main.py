@@ -55,7 +55,7 @@ try:
     for i in range(0,5):
         folium.Marker(
             [a['위도'][i], a['경도'][i]],
-            popup =a['상호지점명'][i]>,
+            popup =a['상호지점명'][i],
             tooltip = a['거리'][i]
         ).add_to(m)
 
