@@ -73,7 +73,7 @@ def main():
             st.write(a)
     except UnboundLocalError:
         st.error('')
-
+    with tab3:
         
-tab1, tab2 = st.tabs(['Map','distance'])
+tab1, tab2, tab3 = st.tabs(['Map','distance','Review'])
 main()
