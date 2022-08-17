@@ -9,7 +9,7 @@ import folium
 from streamlit_folium import st_folium
 
 
-df = pd.read_csv('./seoul_info2.csv')
+df = pd.read_csv('./deleted_df.csv')
 
 
 loc_button = Button(label="Get Location")
