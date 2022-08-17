@@ -70,7 +70,7 @@ def main():
             st.error('Click GetLocation Button')
     try:
         with tab2:
-            st.write(a)
+            st.write(a[['상호지점명','거리']])
     except UnboundLocalError:
         st.error('')
     with tab3:
