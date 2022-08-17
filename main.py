@@ -68,5 +68,5 @@ with tab1:
     except AttributeError:
         st.error('Click GetLocation Button')
 with tab2:
-     a = df[['상호지점명','거리','위도','경도']].sort_values(by='거리').head(10).reset_index(drop=True)
+    a = df[['상호지점명','거리','위도','경도']].sort_values(by='거리').head(10).reset_index(drop=True)
     st.write(a)
