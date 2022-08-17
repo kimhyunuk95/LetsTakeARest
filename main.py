@@ -12,14 +12,14 @@ from streamlit_folium import st_folium
 df = pd.read_csv('./deleted_df.csv')
 
 loc_button = Button(label="Get Location")
-        loc_button.js_on_event("button_click", CustomJS(code="""
-            navigator.geolocation.getCurrentPosition(
-                (loc) => {
-                    document.dispatchEvent(new CustomEvent("GET_LOCATION", {detail: {lat: loc.coords.latitude, lon: loc.coords.longitude}}))
+    loc_button.js_on_event("button_click", CustomJS(code="""
+        navigator.geolocation.getCurrentPosition(
+            (loc) => {
+                document.dispatchEvent(new CustomEvent("GET_LOCATION", {detail: {lat: loc.coords.latitude, lon: loc.coords.longitude}}))
                 }
             )
             """))
-        result = streamlit_bokeh_events(
+    result = streamlit_bokeh_events(
             loc_button,
             events="GET_LOCATION",
             key="get_location",
@@ -27,8 +27,8 @@ loc_button = Button(label="Get Location")
             override_height=75,
             debounce_time=0)
 
-        destination_lat = df['위도']
-        destination_lng = df['경도']
+    destination_lat = df['위도']
+    destination_lng = df['경도']
         
 def main():
     with tab1:
