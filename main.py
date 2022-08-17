@@ -36,7 +36,7 @@ for i in range(len(lat_list)):
     ds_list.append(howlong.distance(origin_lat, origin_lng, lat_list[i], lng_list[i]))
 df['거리'] = pd.DataFrame(ds_list)
 a = df[['상호지점명','거리']].sort_values(by='거리').head(5).to_string(index=False)
-b = df[['위도', '경도']].sort_values(by='거리').head)(5).to_string(index=False)    
+b = df[['위도', '경도']].sort_values(by='거리').head(5).to_string(index=False)    
 
 st.write(a)
 st.write(b)
