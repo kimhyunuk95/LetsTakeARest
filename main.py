@@ -43,8 +43,7 @@ st.write(a)
 b = pd.DataFrame()
 b['lat'] = a['위도']
 b['lon'] = a['경도']
-st.map(b)
 
 #folium
-m = folium.Map(location=[b['lat'][0],b['lon'][0]], zoom_start=16)
+m = folium.Map(location=[origin_lat,origin_lng], zoom_start=16)
 st_data = st_folium(m, width=725)
