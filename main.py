@@ -11,9 +11,7 @@ from streamlit_folium import st_folium
 
 df = pd.read_csv('./deleted_df.csv')
 
-def main():
-    with tab1:
-        loc_button = Button(label="Get Location")
+loc_button = Button(label="Get Location")
         loc_button.js_on_event("button_click", CustomJS(code="""
             navigator.geolocation.getCurrentPosition(
                 (loc) => {
@@ -31,6 +29,9 @@ def main():
 
         destination_lat = df['위도']
         destination_lng = df['경도']
+        
+def main():
+    with tab1:
         try:
             origin_lat, origin_lng = result.get("GET_LOCATION")['lat'], result.get("GET_LOCATION")['lon']
             lat_list = destination_lat.tolist()
