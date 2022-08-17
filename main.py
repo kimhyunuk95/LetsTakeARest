@@ -40,7 +40,7 @@ try:
         ds_list.append(howlong.distance(origin_lat, origin_lng, lat_list[i], lng_list[i]))
     df['거리'] = pd.DataFrame(ds_list)
 
-    a = df[['상호지점명','거리','위도','경도']].sort_values(by='거리').head(5).reset_index(drop=True)
+    a = df[['상호지점명','거리','위도','경도']].sort_values(by='거리').head(10).reset_index(drop=True)
     st.write(a)
 
 
