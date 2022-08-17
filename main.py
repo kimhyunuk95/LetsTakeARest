@@ -11,21 +11,7 @@ from streamlit_folium import st_folium
 
 df = pd.read_csv('./deleted_df.csv')
 
-loc_button = Button(label="Get Location")
-loc_button.js_on_event("button_click", CustomJS(code="""
-        navigator.geolocation.getCurrentPosition(
-            (loc) => {
-                document.dispatchEvent(new CustomEvent("GET_LOCATION", {detail: {lat: loc.coords.latitude, lon: loc.coords.longitude}}))
-                }
-            )
-            """))
-result = streamlit_bokeh_events(
-            loc_button,
-            events="GET_LOCATION",
-            key="get_location",
-            refresh_on_update=False,
-            override_height=75,
-            debounce_time=0)
+
 
 destination_lat = df['위도']
 destination_lng = df['경도']
@@ -33,6 +19,21 @@ destination_lng = df['경도']
 def main():
     with tab1:
         try:
+            loc_button = Button(label="Get Location")
+            loc_button.js_on_event("button_click", CustomJS(code="""
+            navigator.geolocation.getCurrentPosition(
+            (loc) => {
+                document.dispatchEvent(new CustomEvent("GET_LOCATION", {detail: {lat: loc.coords.latitude, lon: loc.coords.longitude}}))
+                }
+            )
+            """))
+            result = streamlit_bokeh_events(
+            loc_button,
+            events="GET_LOCATION",
+            key="get_location",
+            refresh_on_update=False,
+            override_height=75,
+            debounce_time=0)
             origin_lat, origin_lng = result.get("GET_LOCATION")['lat'], result.get("GET_LOCATION")['lon']
             lat_list = destination_lat.tolist()
             lng_list = destination_lng.tolist()
