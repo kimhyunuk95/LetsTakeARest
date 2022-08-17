@@ -6,6 +6,8 @@ from bokeh.models.widgets import Button
 from bokeh.models import CustomJS
 from streamlit_bokeh_events import streamlit_bokeh_events
 import folium
+from streamlit_folium import st_folium
+
 
 df = pd.read_csv('./seoul_info2.csv')
 
@@ -42,3 +44,7 @@ b = pd.DataFrame()
 b['lat'] = a['위도']
 b['lon'] = a['경도']
 st.map(b)
+
+#folium
+m = folium.Map(location=[b['lat'][0],b['lon'][0]], zoom_start=16)
+st_data = st_folium(m, width=725)
