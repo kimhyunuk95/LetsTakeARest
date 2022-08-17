@@ -39,26 +39,27 @@ try:
     for i in range(len(lat_list)):
         ds_list.append(howlong.distance(origin_lat, origin_lng, lat_list[i], lng_list[i]))
     df['거리'] = pd.DataFrame(ds_list)
+
+    a = df[['상호지점명','거리','위도','경도']].sort_values(by='거리').head(5).reset_index(drop=True)
+    st.write(a)
+
+
+
+    b = pd.DataFrame()
+    b['lat'] = a['위도']
+    b['lon'] = a['경도']
+
+    #folium
+    m = folium.Map(location=[origin_lat,origin_lng], zoom_start=16)
+
+    for i in range(0,5):
+        folium.Marker(
+            [a['위도'][i], a['경도'][i]],
+            popup = a['상호지점명'][i],
+            tooltip = a['거리'][i]
+        ).add_to(m)
+
+    st_data = st_folium(m, width=725)
 except AttributeError:
     st.error('버튼을 클릭해주세요')
-a = df[['상호지점명','거리','위도','경도']].sort_values(by='거리').head(5).reset_index(drop=True)
-st.write(a)
-
-
-
-b = pd.DataFrame()
-b['lat'] = a['위도']
-b['lon'] = a['경도']
-
-#folium
-m = folium.Map(location=[origin_lat,origin_lng], zoom_start=16)
-    
-for i in range(0,5):
-    folium.Marker(
-        [a['위도'][i], a['경도'][i]],
-        popup = a['상호지점명'][i],
-        tooltip = a['거리'][i]
-    ).add_to(m)
-
-st_data = st_folium(m, width=725)
 
