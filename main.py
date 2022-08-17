@@ -32,7 +32,7 @@ destination_lat = df['위도']
 destination_lng = df['경도']
 try:
 #     origin_lat, origin_lng = result.get("GET_LOCATION")['lat'], result.get("GET_LOCATION")['lon']
-    origin_lat, origin_lng = 37.6000, 127.0960
+    origin_lat, origin_lng = 37.5980, 127.0960
     lat_list = destination_lat.tolist()
     lng_list = destination_lng.tolist()
 
