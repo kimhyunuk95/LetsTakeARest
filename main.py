@@ -58,7 +58,11 @@ try:
             popup ='<pre>a['상호지점명'][i]</pre>',
             tooltip = a['거리'][i]
         ).add_to(m)
-
+    folium.Marker(
+        [origin_lat, origin_lng],
+        tooltip = '현재위치'
+    ).add_to(m)
+    
     st_data = st_folium(m, width=725)
 except AttributeError:
     st.error('Click GetLocation Button')
