@@ -61,5 +61,5 @@ try:
 
     st_data = st_folium(m, width=725)
 except AttributeError:
-    st.error('버튼을 클릭해주세요')
+    st.error('Click GetLocation Button')
 
