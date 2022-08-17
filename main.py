@@ -10,6 +10,7 @@ from streamlit_folium import st_folium
 
 
 df = pd.read_csv('./deleted_df.csv')
+tab1, tab2 = st.tabs(['Map','distance'])
 
 with tab1:
     loc_button = Button(label="Get Location")
