@@ -48,7 +48,7 @@ b['lon'] = a['경도']
 m = folium.Map(location=[origin_lat,origin_lng], zoom_start=16)
 folium.Marker(
     [a['위도'][0], a['경도'][0]],
-    popup = a['상호지점명']
+    popup = a['상호지점명'],
     tooltip = a['거리']
 ).add_to(m)
 
