@@ -41,7 +41,7 @@ with tab1:
             ds_list.append(howlong.distance(origin_lat, origin_lng, lat_list[i], lng_list[i]))
         df['거리'] = pd.DataFrame(ds_list)
 
-        a = df[['상호지점명','거리','위도','경도']].sort_values(by='거리').head(10).reset_index(drop=True)
+       
 
         b = pd.DataFrame()
         b['lat'] = a['위도']
@@ -68,4 +68,5 @@ with tab1:
     except AttributeError:
         st.error('Click GetLocation Button')
 with tab2:
+     a = df[['상호지점명','거리','위도','경도']].sort_values(by='거리').head(10).reset_index(drop=True)
     st.write(a)
