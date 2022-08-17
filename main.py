@@ -61,7 +61,9 @@ try:
     folium.Marker(
         [origin_lat, origin_lng],
         tooltip = '현재위치',
-        color = 'red'
+        icon = folium.Icon(
+            color = 'red'
+        )
     ).add_to(m)
     
     st_data = st_folium(m, width=725)
