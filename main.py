@@ -37,6 +37,6 @@ for i in range(len(lat_list)):
 df['거리'] = pd.DataFrame(ds_list)
 a = df[['상호지점명','거리']].sort_values(by='거리').head(5).to_string(index=False)
     
-b = df
+b = df['상호지점명', '위도', '경도']
 st.write(a)
 st.write(b)
