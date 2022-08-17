@@ -67,8 +67,11 @@ def main():
             st_data = st_folium(m, width=725)
         except AttributeError:
             st.error('Click GetLocation Button')
-    with tab2:
-        st.write(a)
+    try:
+        with tab2:
+            st.write(a)
+    except UnboundLocalError:
+        st.error('')
 
         
 tab1, tab2 = st.tabs(['Map','distance'])
