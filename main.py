@@ -52,7 +52,7 @@ try:
     #folium
     m = folium.Map(location=[origin_lat,origin_lng], zoom_start=16)
 
-    for i in range(0,5):
+    for i in range(0,10):
         folium.Marker(
             [a['위도'][i], a['경도'][i]],
             popup =a['거리'][i],
