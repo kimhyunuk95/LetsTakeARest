@@ -46,11 +46,13 @@ b['lon'] = a['경도']
 
 #folium
 m = folium.Map(location=[origin_lat,origin_lng], zoom_start=16)
-folium.Marker(
-    [a['위도'][0], a['경도'][0]],
-    popup = a['상호지점명'][0],
-    tooltip = a['거리'][0]
-).add_to(m)
+    
+for i in range(0,5):
+    folium.Marker(
+        [a['위도'][i], a['경도'][i]],
+        popup = a['상호지점명'][i],
+        tooltip = a['거리'][i]
+    ).add_to(m)
 
 st_data = st_folium(m, width=725)
 
