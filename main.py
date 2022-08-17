@@ -30,7 +30,7 @@ result = streamlit_bokeh_events(
 
 destination_lat = df['위도']
 destination_lng = df['경도']
-st.error(“버튼을 눌러주세요”)
+st.error('버튼을 눌러주세요')
 origin_lat, origin_lng = result.get("GET_LOCATION")['lat'], result.get("GET_LOCATION")['lon']
 lat_list = destination_lat.tolist()
 lng_list = destination_lng.tolist()
