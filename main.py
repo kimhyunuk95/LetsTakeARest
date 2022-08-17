@@ -60,7 +60,7 @@ try:
         ).add_to(m)
     folium.Marker(
         [origin_lat, origin_lng],
-        tooltip = '현재위치'
+        tooltip = '현재위치',
         color = 'red'
     ).add_to(m)
     
