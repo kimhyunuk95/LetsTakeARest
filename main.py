@@ -32,17 +32,20 @@ destination_lat = df['위도']
 destination_lng = df['경도']
 try:
     origin_lat, origin_lng = result.get("GET_LOCATION")['lat'], result.get("GET_LOCATION")['lon']
+    lat_list = destination_lat.tolist()
+    lng_list = destination_lng.tolist()
+
+    ds_list = []
+    for i in range(len(lat_list)):
+        ds_list.append(howlong.distance(origin_lat, origin_lng, lat_list[i], lng_list[i]))
+    df['거리'] = pd.DataFrame(ds_list)
 except AttributeError:
     st.error('버튼을 클릭해주세요')
-lat_list = destination_lat.tolist()
-lng_list = destination_lng.tolist()
-    
-ds_list = []
-for i in range(len(lat_list)):
-    ds_list.append(howlong.distance(origin_lat, origin_lng, lat_list[i], lng_list[i]))
-df['거리'] = pd.DataFrame(ds_list)
 a = df[['상호지점명','거리','위도','경도']].sort_values(by='거리').head(5).reset_index(drop=True)
 st.write(a)
+
+
+
 b = pd.DataFrame()
 b['lat'] = a['위도']
 b['lon'] = a['경도']
